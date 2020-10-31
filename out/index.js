@@ -1,23 +1,4 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -55,33 +36,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var GithubService_1 = require("./services/GithubService");
-var _ = __importStar(require("lodash"));
 var chalk = require('chalk');
 var clear = require('clear');
 var figlet = require('figlet');
-var cmdPrompt = require('./utils/inquire');
 clear();
 console.log(chalk.yellow(figlet.textSync('GitMyRepos', { horizontalLayout: 'default' })));
 var run = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var credentials, svc;
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, cmdPrompt.askGithubUsername()];
-            case 1:
-                credentials = _a.sent();
-                console.log(credentials);
-                svc = new GithubService_1.GithubService();
-                svc.getUserInfo(credentials.username, function (user) {
-                    svc.getRepos(credentials.username, function (repos) {
-                        var sorted = _.sortBy(repos, [function (repo) { return repo.name; }]);
-                        var filtered = _.take(sorted, 2);
-                        user.repos = filtered;
-                        console.log(user.repos);
-                    });
-                });
-                return [2 /*return*/];
-        }
+        return [2 /*return*/];
     });
 }); };
 run();
