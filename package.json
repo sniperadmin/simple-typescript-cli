@@ -1,19 +1,31 @@
 {
   "name": "ts-simple-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bootstraping projects into CLI",
   "main": "index.js",
+  "bin": {
+    "nasr3090/nash": "bin/nash",
+    "nash": "bin/nash"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "tsc && node output/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "cli",
+    "nash"
+  ],
+  "author": "sniperadmin(Nasr Galal)",
   "license": "ISC",
   "dependencies": {
     "@types/lodash": "^4.14.163",
     "@types/request": "^2.48.5",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
+    "esm": "^3.2.25",
     "figlet": "^1.5.0",
     "inquirer": "^7.3.3",
     "lodash": "^4.17.20",

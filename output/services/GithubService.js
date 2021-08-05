@@ -33,6 +33,7 @@ var GithubService = /** @class */ (function () {
     function GithubService() {
     }
     GithubService.prototype.getUserInfo = function (userName, cb) {
+        console.log('Loading repos data...');
         request.get('https://api.github.com/users/' + userName, options, function (error, response, body) {
             var user = new User_1.User(body);
             cb(user);

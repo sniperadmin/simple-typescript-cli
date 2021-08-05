@@ -1,6 +1,6 @@
 import * as request from 'request'
-import { User } from '../models/User'
-import { Repo } from '../models/Repo';
+import { User } from '../../models/gh/User'
+import { Repo } from '../../models/gh/Repo';
 
 let options: any = {
   headers: {
@@ -8,9 +8,9 @@ let options: any = {
   },
   json: true
 }
-
 export class GithubService {
   getUserInfo(userName: string, cb: (user: User) => any) {
+    console.log('Loading repos data...');
     request.get('https://api.github.com/users/' + userName,
       options,
       (error: any, response: any, body: any) => {
